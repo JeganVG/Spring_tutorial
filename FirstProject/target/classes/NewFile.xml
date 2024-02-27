@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> 
+        <context:annotation-config/>
+        
+        <context:property-placeholder location="classpath:Student-info.properties"/>
+        
+	<bean id="student" class="springpackage.Student">
+
+	</bean>
+	
+	<bean id="machine" class="springpackage.Machine">
+		<property name="name" value="valve"/>
+		<property name="price" value="100"/>
+	</bean>
+	
+	<bean id="chainsaw" class="springpackage.Machine">
+		<property name="name" value="chainsaw"/>
+		<property name="price" value="200"/>
+	</bean>
+	
+	<bean id="driller" class="springpackage.Machine">
+		<property name="name" value="driller"/>
+		<property name="price" value="300"/>
+	</bean>
+	
+	
+	<bean id="employee1" class="springpackage.Employee">
+		<constructor-arg name="id" value="1"/>
+		<constructor-arg name="name" value="jegan"/>
+	</bean>
+	
+	<bean id="employee2" class="springpackage.Employee">
+		<constructor-arg name="id" value="2"/>
+		<constructor-arg name="name" value="megan"/>
+	</bean>
+	
+	<bean id="employee3" class="springpackage.Employee" autowire="byName">
+		<constructor-arg name="id" value="3"/>
+		<constructor-arg name="name" value="regan"/>	
+	</bean>
+
+	<bean id="system" class="springpackage.SystemManager" ></bean>
+	
+</beans>
